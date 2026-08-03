@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Report Found Item</title>
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- Sticky Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="index.html">Lost & Found</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="report-lost.html">Report Lost</a></li>
+          <li class="nav-item"><a class="nav-link active text-success fw-bold" href="report-found.html">Report Found</a></li>
+          <li class="nav-item"><a class="nav-link" href="browse.html">Browse</a></li>
+          <li class="nav-item"><a class="nav-link" href="feedback.html">Feedback</a></li>
+          <li class="nav-item"><a class="nav-link" href="campus-directions.html">Campus Directions</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Banner -->
+  <section class="bg-success text-white text-center py-4 mb-4">
+    <div class="container">
+      <h1 class="display-5">Report a Found Item</h1>
+      <p class="lead">Found something? Help it get back to the right person by reporting it here.</p>
+    </div>
+  </section>
+
+  <!-- Reporting the found item form -->
+  <div class="container">
+    <form id="foundForm" onsubmit="handleFoundForm(event)">
+      <div class="mb-3">
+        <label for="itemType" class="form-label">Item Type *</label>
+        <select class="form-select" id="itemType" required>
+          <option value="" disabled selected>Select item type</option>
+          <option value="electronics">Electronics</option>
+          <option value="clothing">Clothing</option>
+          <option value="accessories">Accessories</option>
+          <option value="books">Books</option>
+          <option value="other">Other</option>
+        </select>
+      </div>
+
+      <div class="mb-3">
+        <label for="itemTitle" class="form-label">Item Name *</label>
+        <input type="text" class="form-control" id="itemTitle" required placeholder="e.g. Blue Umbrella" />
+      </div>
+
+      <div class="mb-3">
+        <label for="description" class="form-label">Description *</label>
+        <textarea class="form-control" id="description" rows="3" required placeholder="Describe the item..."></textarea>
+      </div>
+
+      <div class="mb-3">
+        <label for="location" class="form-label">Where You Found It *</label>
+        <input type="text" class="form-control" id="location" required placeholder="e.g. Library, Lecture Hall" />
+      </div>
+
+      <div class="mb-3">
+        <label for="dateFound" class="form-label">Date Found *</label>
+        <input type="date" class="form-control" id="dateFound" required />
+      </div>
+
+      <div class="mb-3">
+        <label for="contact" class="form-label">Your Contact Email *</label>
+        <input type="email" class="form-control" id="contact" required placeholder="e.g. #######@buckingham.ac.uk" />
+      </div>
+
+      <div class="mb-3">
+        <label for="imageUpload" class="form-label">Upload Image (optional)</label>
+        <input type="file" class="form-control" id="imageUpload" accept="image/*" />
+      </div>
+
+      <button type="submit" class="btn btn-success">Submit Report</button>
+    </form>
+  </div>
+
+  <!-- Footer -->
+  <footer class="text-center mt-5 py-4 bg-light">
+    © 2025 Lost and Found @ University of Buckingham
+  </footer>
+
+  <!-- JavaS Scripts -->
+  <script src="js/main.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

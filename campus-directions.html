@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Campus Directions</title>
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- Sticky Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="index.html">Lost & Found</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="report-lost.html">Report Lost</a></li>
+          <li class="nav-item"><a class="nav-link" href="report-found.html">Report Found</a></li>
+          <li class="nav-item"><a class="nav-link" href="browse.html">Browse</a></li>
+          <li class="nav-item"><a class="nav-link" href="feedback.html">Feedback</a></li>
+          <li class="nav-item"><a class="nav-link active text-primary fw-bold" href="campus-directions.html">Campus Directions</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Banner -->
+  <section class="bg-primary text-white text-center py-4 mb-4">
+    <div class="container">
+      <h1 class="display-5">Campus Directions</h1>
+      <p class="lead">Find your way around the University of Buckingham with our interactive map and quick links.</p>
+    </div>
+  </section>
+
+  <!-- Google Maps Embed to display a map of the campus -->
+  <div class="container mb-5">
+    <div class="ratio ratio-16x9 mb-4">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2420.0187015424936!2d-0.9936523841927579!3d51.9953576792111!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4876f3b16862fa39%3A0xa7d06234f6024aa0!2sUniversity%20of%20Buckingham!5e0!3m2!1sen!2suk!4v1669042654813!5m2!1sen!2suk"
+        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy">
+      </iframe>
+    </div>
+
+    <!-- Quick Location Links to find directions quickly -->
+    <h3 class="mb-3">Popular Campus Locations</h3>
+    <div class="row g-3">
+        <div class="col-md-6 col-lg-4">
+            <a href="https://www.google.com/maps?q=Vinson+Building+University+of+Buckingham" target="_blank" class="btn btn-outline-primary w-100">Vinson Building</a>
+        </div>
+        <div class="col-md-6 col-lg-4">
+            <a href="https://maps.app.goo.gl/Yojr4JkKzZTMRyeT8" target="_blank" class="btn btn-outline-primary w-100">Franciscan Building</a>
+        </div>
+        <div class="col-md-6 col-lg-4">
+            <a href="https://www.google.com/maps?q=Tanlaw+Mill+University+of+Buckingham" target="_blank" class="btn btn-outline-primary w-100">Old Tanlaw Mill</a>
+        </div>
+        <div class="col-md-6 col-lg-4">
+            <a href="https://www.google.com/maps?q=Hunter+Street+University+of+Buckingham" target="_blank" class="btn btn-outline-primary w-100">Hunter Street</a>
+        </div>
+        <div class="col-md-6 col-lg-4">
+            <a href="https://www.google.com/maps?q=Chandos+Road+University+of+Buckingham" target="_blank" class="btn btn-outline-primary w-100">Chandos Road Buildings</a>
+        </div>
+        <div class="col-md-6 col-lg-4">
+            <a href="https://maps.app.goo.gl/u1amhu1spM1CGG388" target="_blank" class="btn btn-outline-primary w-100">ADR Building</a>
+        </div>
+        <div class="col-md-6 col-lg-4">
+            <a href="https://www.google.com/maps?q=Mount+Pleasant+University+of+Buckingham" target="_blank" class="btn btn-outline-primary w-100">Mount Pleasant</a>
+        </div>
+    </div>
+
+    <!-- Tips for where ppl may have lost their items -->
+    <div class="mt-5">
+      <h4>Quick Tips:</h4>
+      <ul>
+        <li>📍 Lost something at Vinson? Check near the main reception or the seating area opposite it.</li>
+        <li>📚 Books and bags are often forgotten in the Franciscan Library's study rooms.</li>
+        <li>🧥 Coats and clothing are usually found in the OTM Bar.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="text-center mt-5 py-4 bg-light">
+    © 2025 Lost and Found @ University of Buckingham
+  </footer>
+
+  <!-- Bootstrap JavaS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

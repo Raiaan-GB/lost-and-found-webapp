@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>About Lost & Found</title>
+
+  <!-- Using Bootstrap 5 CSS so the website looks modern and smooth -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- sticky Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="index.html">Lost & Found</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="report-lost.html">Report Lost</a></li>
+          <li class="nav-item"><a class="nav-link" href="report-found.html">Report Found</a></li>
+          <li class="nav-item"><a class="nav-link" href="browse.html">Browse</a></li>
+          <li class="nav-item"><a class="nav-link" href="feedback.html">Feedback</a></li>
+          <li class="nav-item"><a class="nav-link" href="campus-directions.html">Campus Directions</a></li>
+          <li class="nav-item"><a class="nav-link active text-light fw-bold" href="about.html">About</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Banner -->
+  <section class="bg-dark text-white text-center py-5">
+    <div class="container">
+      <h1 class="display-5">About This Website</h1>
+      <p class="lead">Helping students and staff recover and return lost items on campus</p>
+    </div>
+  </section>
+
+  <!-- Content -->
+  <div class="container my-5">
+    <h3>What is Lost & Found?</h3>
+    <p>
+      Lost & Found is a student-built web application for reporting and recovering lost items within the University of Buckingham campus.
+      It allows students and staff to submit lost or found item reports, browse listings, and view directions to campus locations.
+    </p>
+
+    <h4 class="mt-4">How to Use This Website:</h4>
+    <ul>
+      <li><strong>Step 1:</strong> If you lost something, go to <a href="report-lost.html">Report Lost</a> and fill out the form.</li>
+      <li><strong>Step 2:</strong> If you found something, submit it through <a href="report-found.html">Report Found</a>.</li>
+      <li><strong>Step 3:</strong> Browse all listings on the <a href="browse.html">Browse</a> page.</li>
+      <li><strong>Step 4:</strong> Use <a href="campus-directions.html">Campus Directions</a> to locate buildings where items may be returned.</li>
+      <li><strong>Step 5:</strong> Submit feedback or suggestions on the <a href="feedback.html">Feedback</a> page.</li>
+    </ul>
+
+    <h4 class="mt-4">Technologies Used:</h4>
+    <ul>
+      <li>HTML5 + CSS3</li>
+      <li>Bootstrap 5 for responsive design</li>
+      <li>JavaScript for DOM manipulation and interactivity</li>
+      <li><code>localStorage</code> for saving lost, found and feedback forms</li>
+    </ul>
+
+    <h4 class="mt-4 text-danger">Disclaimer:</h4>
+    <p>
+      Please refrain from uploading sensitive personal information or images that could violate privacy. This website is a Web development project by Raiaan Ahmed and is not monitored for item recovery.
+    </p>
+  </div>
+
+  <!-- Footer -->
+  <footer class="text-center mt-5 py-4 bg-light">
+    © 2025 Lost and Found @ University of Buckingham
+  </footer>
+
+  <!-- Bootstrap JavaS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

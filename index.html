@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Lost & Found</title>
+
+  <!-- Using Bootstrap 5 CSS so the website looks modern and smooth -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- Using sticky Navbar to make navigation easier -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="index.html">Lost & Found</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="report-lost.html">Report Lost</a></li>
+          <li class="nav-item"><a class="nav-link" href="report-found.html">Report Found</a></li>
+          <li class="nav-item"><a class="nav-link" href="browse.html">Browse</a></li>
+          <li class="nav-item"><a class="nav-link" href="feedback.html">Feedback</a></li>
+          <li class="nav-item"><a class="nav-link" href="campus-directions.html">Campus Directions</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Banner -->
+  <section class="bg-success text-white text-center py-5">
+    <div class="container">
+      <h1 class="display-4">Lost Something?</h1>
+      <p class="lead">Or found an item? Help others by reporting it here.</p>
+      <a href="report-lost.html" class="btn btn-light btn-lg m-2">Report Lost Item</a>
+      <a href="report-found.html" class="btn btn-outline-light btn-lg m-2">Report Found Item</a>
+    </div>
+  </section>
+
+  <!-- Recent Items for efficint findings -->
+  <div class="container mt-5">
+    <div class="row text-center">
+      <div class="col-md-6">
+        <h3>Recently Lost</h3>
+        <div id="recent-lost"></div>
+      </div>
+      <div class="col-md-6">
+        <h3>Recently Found</h3>
+        <div id="recent-found"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="text-center mt-5 py-4 bg-light">
+    © 2025 Lost and Found @ University of Buckingham
+  </footer>
+
+  <!-- Bootstrap 5 JavaS -->
+  <script src="js/main.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

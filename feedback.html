@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Website Feedback</title>
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- Sticky Navbar -->
+ <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="index.html">Lost & Found</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="report-lost.html">Report Lost</a></li>
+          <li class="nav-item"><a class="nav-link" href="report-found.html">Report Found</a></li>
+          <li class="nav-item"><a class="nav-link" href="browse.html">Browse</a></li>
+          <li class="nav-item"><a class="nav-link active text-info fw-bold" href="feedback.html">Feedback</a></li>
+          <li class="nav-item"><a class="nav-link" href="campus-directions.html">Campus Directions</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Banner -->
+  <section class="bg-info text-white text-center py-4 mb-4">
+    <div class="container">
+      <h1 class="display-5">Website Feedback</h1>
+      <p class="lead">Tell us what you think about the Lost & Found portal</p>
+    </div>
+  </section>
+
+  <!-- Feedback Form  which is stored into the local storage -->
+  <div class="container mb-5">
+    <form id="feedbackForm" onsubmit="handleFeedbackForm(event)">
+      <div class="mb-3">
+        <label for="name" class="form-label">Your Name (optional)</label>
+        <input type="text" class="form-control" id="name" placeholder="e.g. John Doe" />
+      </div>
+
+      <div class="mb-3">
+        <label for="email" class="form-label">Your Email (optional)</label>
+        <input type="email" class="form-control" id="email" placeholder="e.g. #######@university.ac.uk" />
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">How satisfied are you with the service? *</label><br />
+        <div class="form-check form-check-inline">
+          <input type="radio" class="form-check-input" name="satisfaction" value="1" required />
+          <label class="form-check-label">1</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input type="radio" class="form-check-input" name="satisfaction" value="2" />
+          <label class="form-check-label">2</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input type="radio" class="form-check-input" name="satisfaction" value="3" />
+          <label class="form-check-label">3</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input type="radio" class="form-check-input" name="satisfaction" value="4" />
+          <label class="form-check-label">4</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input type="radio" class="form-check-input" name="satisfaction" value="5" />
+          <label class="form-check-label">5</label>
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">Which features did you use? *</label><br />
+        <div class="form-check">
+          <input type="checkbox" class="form-check-input" id="used-lost" value="Report Lost" />
+          <label class="form-check-label" for="used-lost">Report Lost</label>
+        </div>
+        <div class="form-check">
+          <input type="checkbox" class="form-check-input" id="used-found" value="Report Found" />
+          <label class="form-check-label" for="used-found">Report Found</label>
+        </div>
+        <div class="form-check">
+          <input type="checkbox" class="form-check-input" id="used-browse" value="Browse" />
+          <label class="form-check-label" for="used-browse">Browse</label>
+        </div>
+        <div class="form-check">
+          <input type="checkbox" class="form-check-input" id="used-directions" value="Campus Directions" />
+          <label class="form-check-label" for="used-directions">Campus Directions</label>
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label for="usability" class="form-label">How easy was the site to use? *</label>
+        <select class="form-select" id="usability" required>
+          <option value="" disabled selected>Select an option</option>
+          <option value="very-easy">Very Easy</option>
+          <option value="easy">Easy</option>
+          <option value="neutral">Neutral</option>
+          <option value="difficult">Difficult</option>
+        </select>
+      </div>
+
+      <div class="mb-3">
+        <label for="usefulness" class="form-label">How useful did you find the site? (0–10) *</label>
+        <input type="range" class="form-range" id="usefulness" min="0" max="10" />
+      </div>
+
+      <div class="mb-3">
+        <label for="dateUsed" class="form-label">When did you use the site? (optional)</label>
+        <input type="date" class="form-control" id="dateUsed" />
+      </div>
+
+      <div class="mb-3">
+        <label for="comments" class="form-label">Any suggestions or feedback?</label>
+        <textarea class="form-control" id="comments" rows="3" placeholder="Write your message here..."></textarea>
+      </div>
+
+      <button type="submit" class="btn btn-info">Submit Feedback</button>
+    </form>
+  </div>
+
+  <!-- JavaS Scripts -->
+  <script>
+    function handleFeedbackForm(event) {
+      event.preventDefault();
+  
+      const feedback = {
+        name: document.getElementById("name").value,
+        email: document.getElementById("email").value,
+        satisfaction: document.querySelector('input[name="satisfaction"]:checked')?.value || "",
+        featuresUsed: Array.from(document.querySelectorAll('input[type="checkbox"]:checked')).map(el => el.value),
+        usability: document.getElementById("usability").value,
+        usefulness: document.getElementById("usefulness").value,
+        dateUsed: document.getElementById("dateUsed").value,
+        comments: document.getElementById("comments").value,
+        timestamp: new Date().toISOString()
+      };
+  
+      const feedbackEntries = JSON.parse(localStorage.getItem("feedbackEntries")) || [];
+      feedbackEntries.push(feedback);
+      localStorage.setItem("feedbackEntries", JSON.stringify(feedbackEntries));
+  
+      alert("Thank you for your feedback!");
+      document.getElementById("feedbackForm").reset();
+    }
+  </script>  
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <footer class="text-center mt-5 py-4 bg-light">
+    © 2025 Lost and Found @ University of Buckingham
+  </footer>
+</body>
+</html>
